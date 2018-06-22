@@ -43,3 +43,8 @@ func New(filename string) (Validator, error) {
 	}
 	return validator, e
 }
+
+// Test a public method for testing
+func Test() {
+	fmt.Printf("Public Test():\n")
+}
