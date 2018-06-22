@@ -45,6 +45,6 @@ func New(filename string) (Validator, error) {
 }
 
 // Test a public method for testing
-func Test() {
+func (v Validator) Test() {
 	fmt.Printf("Public Test():\n")
 }
