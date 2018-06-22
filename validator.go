@@ -34,11 +34,6 @@ func New(filename string) (Validator, error) {
 	} else {
 		validator.root = gjson.Parse(string(file))
 
-		validator.root.ForEach(func(key, value gjson.Result) bool {
-			fmt.Printf("key: %s\n", key)
-			return true
-		})
-
 		json.Unmarshal(file, &validator.JSON)
 	}
 	return validator, e
@@ -47,4 +42,12 @@ func New(filename string) (Validator, error) {
 // Test a public method for testing
 func (v Validator) Test() {
 	fmt.Printf("Public Test():\n")
+}
+
+// PrintRootKeys a public method for printing out root keys
+func (v Validator) PrintRootKeys() {
+	validator.root.ForEach(func(key, value gjson.Result) bool {
+		fmt.Printf("key: %s\n", key)
+		return true
+	})
 }
